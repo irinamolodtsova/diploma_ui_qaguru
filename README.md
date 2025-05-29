@@ -40,6 +40,8 @@
 * Page Source;
 * Логи браузерной консоли;
 * Видео выполнения автотеста.
+
+
 ## Запуск автотестов
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="/media/Jenkins.svg"> Сборка в Jenkins
@@ -49,6 +51,10 @@
 <img title="Jenkins Build" src="media/JenkinsScreen.png">
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
+
+**Для локального запуска используется команда:**
+
+./gradlew clean Test
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/Allure_Report.svg"> Пример Allure-отчета
 ### Overview
