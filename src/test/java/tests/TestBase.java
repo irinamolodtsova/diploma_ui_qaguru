@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import static com.codeborne.selenide.Selenide.open;
-import static helpers.JenkinsProperties.getServer;
+import static helpers.JenkinsProperties.*;
 
 public class TestBase {
 
@@ -36,6 +36,8 @@ public class TestBase {
         Configuration.browserSize = config.getBrowserSize();
         if (config.isRemote()) {
             Configuration.remote = getServer();
+            Configuration.browser = getBrowser();
+            Configuration.browserVersion = getBrowserVersion();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
