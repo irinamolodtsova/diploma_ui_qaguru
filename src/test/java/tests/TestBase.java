@@ -25,26 +25,24 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-data-dir=/tmp/chrome-profile-" + UUID.randomUUID());
-        Configuration.browserCapabilities = new ChromeOptions()
-                .addArguments("--user-data-dir=/tmp/chrome-tmp-" + System.currentTimeMillis());
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--user-data-dir=/tmp/chrome-profile-" + UUID.randomUUID());
+//        Configuration.browserCapabilities = new ChromeOptions()
+//                .addArguments("--user-data-dir=/tmp/chrome-tmp-" + System.currentTimeMillis());
         Configuration.pageLoadStrategy = "eager";
         Configuration.pollingInterval = 400;
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browser = config.getBrowser();
-        Configuration.browserSize = config.getBrowserSize();
+     //   Configuration.browserSize = config.getBrowserSize();
         if (config.isRemote()) {
             Configuration.remote = getServer();
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                    "enableVNC", true,
+                    "enableVideo", true
+            ));
+            Configuration.browserCapabilities = capabilities;
         }
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-
-        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeEach
