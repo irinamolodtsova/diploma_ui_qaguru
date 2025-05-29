@@ -1,0 +1,31 @@
+package config;
+
+
+import org.aeonbits.owner.Config;
+
+@Config.LoadPolicy(Config.LoadType.FIRST)
+@Config.Sources({
+        "classpath:${env}.properties",
+        "classpath:local.properties"
+})
+public interface WebDriverConfig extends Config {
+    @Key("getBrowser")
+    @DefaultValue("chrome")
+    String getBrowser();
+
+    @Key("getBrowserVersion")
+    @DefaultValue("114")
+    String getBrowserVersion();
+
+    @Key("getBrowserSize")
+    @DefaultValue("1920x1080")
+    String getBrowserSize();
+
+    @Key("getBaseUrl")
+    @DefaultValue("https://level.travel/")
+    String getBaseUrl();
+
+    @Key("isRemote")
+    @DefaultValue("false")
+    boolean isRemote();
+}
