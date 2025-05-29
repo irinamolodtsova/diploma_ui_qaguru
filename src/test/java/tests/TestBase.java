@@ -33,7 +33,7 @@ public class TestBase {
         Configuration.pollingInterval = 400;
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browser = config.getBrowser();
-     //   Configuration.browserSize = config.getBrowserSize();
+        Configuration.browserSize = config.getBrowserSize();
         if (config.isRemote()) {
             Configuration.remote = getServer();
             DesiredCapabilities capabilities = new DesiredCapabilities();
