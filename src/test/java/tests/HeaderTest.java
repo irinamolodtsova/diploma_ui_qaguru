@@ -17,7 +17,7 @@ public class HeaderTest extends TestBase {
         header.contactUsIconExists()
                 .servicesIconExists()
                 .helpIconExists()
-                .loginDoesNotExists()
+                .loginExists()
                 .myListDoesNotExists();
     }
 
@@ -35,13 +35,12 @@ public class HeaderTest extends TestBase {
 
     @CsvFileSource(resources = "/helpAvailableList.csv")
     @ParameterizedTest(name = "Проверка доступных опций в выпадающем списке Помощь")
-    void checkAvailableHelpTest(String aboutCompany, String openCountries, String faq, String review, String press, String offers, String contacts) {
+    void checkAvailableHelpTest(String aboutCompany, String openCountries, String faq, String review, String offers, String contacts) {
         header.helpHover()
                 .checkHelp(aboutCompany)
                 .checkHelp(openCountries)
                 .checkHelp(faq)
                 .checkHelp(review)
-                .checkHelp(press)
                 .checkHelp(offers)
                 .checkHelp(contacts);
     }

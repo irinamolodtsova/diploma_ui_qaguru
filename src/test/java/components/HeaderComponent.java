@@ -45,8 +45,8 @@ public class HeaderComponent {
     }
 
     @Step("Check Login icon exists")
-    public HeaderComponent loginDoesNotExists() {
-        LOGIN.shouldNot(Condition.exist);
+    public HeaderComponent loginExists() {
+        LOGIN.should(Condition.exist);
         return this;
     }
 
