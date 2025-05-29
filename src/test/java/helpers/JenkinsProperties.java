@@ -10,11 +10,11 @@ public class JenkinsProperties {
         return "https://" + login + ":" + pw + "@" + server + "/wd/hub";
     }
 
-    public static String getBrowser(){
-        return System.getProperty("browser","chrome");
+    public static String getBrowser() {
+        return System.getProperty("browser", "chrome");
     }
 
-    public static String getBrowserVersion(){
+    public static String getBrowserVersion() {
         return System.getProperty("version", "126.0");
     }
 
