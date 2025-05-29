@@ -27,6 +27,8 @@ public class TestBase {
     static void beforeAll() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--user-data-dir=/tmp/chrome-profile-" + UUID.randomUUID());
+        Configuration.browserCapabilities = new ChromeOptions()
+                .addArguments("--user-data-dir=/tmp/chrome-tmp-" + System.currentTimeMillis());
         Configuration.pageLoadStrategy = "eager";
         Configuration.pollingInterval = 400;
         Configuration.baseUrl = config.getBaseUrl();
