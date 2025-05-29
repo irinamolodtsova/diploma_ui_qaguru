@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
+import java.util.UUID;
 
 import static com.codeborne.selenide.Selenide.open;
 import static helpers.JenkinsProperties.getServer;
@@ -24,8 +25,8 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserCapabilities = new ChromeOptions()
-                .addArguments("--user-data-dir=/tmp/chrome-tmp-" + System.currentTimeMillis());
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--user-data-dir=/tmp/chrome-profile-" + UUID.randomUUID());
         Configuration.pageLoadStrategy = "eager";
         Configuration.pollingInterval = 400;
         Configuration.baseUrl = config.getBaseUrl();
