@@ -10,6 +10,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -23,6 +24,8 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+        Configuration.browserCapabilities = new ChromeOptions()
+                .addArguments("--user-data-dir=/tmp/chrome-tmp-" + System.currentTimeMillis());
         Configuration.pageLoadStrategy = "eager";
         Configuration.pollingInterval = 400;
         Configuration.baseUrl = config.getBaseUrl();
