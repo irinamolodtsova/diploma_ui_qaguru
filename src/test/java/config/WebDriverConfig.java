@@ -3,10 +3,10 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.LoadPolicy(Config.LoadType.FIRST)
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "file:src/test/resources/remote.properties",
         "file:src/test/resources/local.properties",
+        "file:src/test/resources/remote.properties",
 })
 public interface WebDriverConfig extends Config {
     @Key("getBrowser")

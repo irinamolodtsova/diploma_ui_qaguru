@@ -15,7 +15,7 @@ public class JenkinsProperties {
     }
 
     public static String getBrowserVersion(){
-        return System.getProperty("version", null);
+        return System.getProperty("version", "126.0");
     }
 
 }

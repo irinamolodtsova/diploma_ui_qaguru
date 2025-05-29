@@ -29,8 +29,8 @@ public class TestBase {
         Configuration.browser = config.getBrowser();
         Configuration.browserSize = config.getBrowserSize();
         if (config.isRemote()) {
-//            Configuration.remote = getServer();
-//            Configuration.browser = getBrowser();
+            Configuration.remote = getServer();
+            Configuration.browser = getBrowser();
             Configuration.browserVersion = getBrowserVersion();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -43,10 +43,9 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open(Configuration.baseUrl);
         Configuration.timeout = 7000;
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
     }
 
     @AfterEach
