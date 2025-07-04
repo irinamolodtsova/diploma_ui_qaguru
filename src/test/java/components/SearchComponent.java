@@ -111,7 +111,7 @@ public class SearchComponent {
     }
 
     @Step("Выбираем рандомную страну для путешествия")
-    public SearchComponent chooseCountry() {
+    public SearchComponent chooseCountry(){
         CHOOSE_COUNTRY.click();
 
         // Ждём появления опций
