@@ -1,17 +1,22 @@
 # Проект по автоматизации тестовых сценариев для сайта компании  <a href="https://level.travel/ "> LevelTravel</a></h1>
 
-<img alt="GIPHY" src="/media/lvt.png">
+<img alt="GIPHY" src="media/lvt.png">
+
+
+Написаны тесты на проверку доступного функционала
+Негативный тест на поиск тура без выбора даты
+Динамический тест на поиск тура по рандомным значениям (библиотека Faker)
 
 ## Содержание:
 
-- [Используемый стек](#используемый-стек)
-- [Запуск автотестов](#запуск-автотестов)
-    - [Сборка в Jenkins](#-сборка-в-jenkins)
-- [Пример Allure-отчета](#-пример-allure-отчета)
-- [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
-- [Интеграция с Jira](#-интеграция-с-jira)
-- [Уведомления в Telegram](#-уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-тестов-в-selenoid)
+- Используемый стек
+- Запуск автотестов
+- Сборка в Jenkins
+- Пример Allure-отчета
+- Интеграция с Allure TestOps
+- Интеграция с Jira
+- Уведомления в Telegram
+- Видео примера запуска тестов в Selenoid
 
 ## Используемый стек
 
@@ -52,7 +57,7 @@ Jira</code>.
 
 Для запуска сборки необходимо перейти в раздел <code>Собрать с параметрами</code> и нажать кнопку <code>Собрать</code>.
 <p align="center">
-<img title="Jenkins Build" src="/media/JenkinsScreen.png">
+<img title="Jenkins Build" src="media/JenkinsScreen.png">
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
@@ -60,12 +65,15 @@ Jira</code>.
 
 ./gradlew clean Test
 
+
+[Ссылка на JenkinsJob](https://jenkins.autotests.cloud/job/ui_diploma_irinamolodtsova/)
+
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="/media/Allure_Report.svg"> Пример Allure-отчета
 
 ### Overview
 
 <p align="center">
-<img title="Allure Overview" src="/media/AllurereportScreen.png">
+<img title="Allure Overview" src="media/AllurereportScreen.png">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="/media/AllureTestOps.svg"> Интеграция с Allure TestOps
@@ -75,14 +83,14 @@ Jira</code>.
 сборки.
 
 <p align="center">
-<img title="Allure TestOps DashBoard" src="/media/allureOPScren.png">
+<img title="Allure TestOps DashBoard" src="media/allureDash.png">
 </p>
 
 ### Результат выполнения автотеста
 
 <p align="center">
-<img title="Test Results in Alure TestOps" src="/media/resultScreen.png">
-<img title="Cases Results in Alure TestOps" src="/media/resultCasesScreen.png">
+<img title="Test Results in Alure TestOps" src="media/allureOPScren.png">
+<img title="Cases Results in Alure TestOps" src="media/resultCasesScreen.png">
 </p>
 
 ## <img width="4%" style="vertical-align:middle" title="Jira" src="/media/Jira.svg"> Интеграция с Jira
@@ -91,7 +99,7 @@ Jira</code>.
 написаны в рамках задачи и результат их прогона.
 
 <p align="center">
-<img title="Jira Task" src="/media/jiraScreen.png">
+<img title="Jira Task" src="media/jiraScreen.png">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Telegram" src="/media/Telegram.svg"> Уведомления в Telegram с использованием бота
@@ -100,12 +108,12 @@ Jira</code>.
 сообщение с отчетом о прогоне тестов.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="/media/telegramscreen.png">
+<img width="70%" title="Telegram Notifications" src="media/telegramscreen.png">
 </p>
 
 ### <img width="4%" style="vertical-align:middle" title="Selenoid" src="/media/Selenoid.svg"> Видео примера запуска тестов в Selenoid
 
 В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
 <p align="center">
-  <img title="Selenoid Video" src="/media/v.gif">
+  <img title="Selenoid Video" src="media/v.gif">
 </p>
