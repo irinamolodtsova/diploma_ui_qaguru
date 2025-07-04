@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 
 public class SearchTest extends TestBase {
 
-    SearchComponent search = new SearchComponent();
-    CalendarComponent calendar = new CalendarComponent();
+    final SearchComponent search = new SearchComponent();
+    final CalendarComponent calendar = new CalendarComponent();
 
     @DisplayName("Проверка доступных опций по поиску - Туры, Отели, Экскурсии")
     @Test

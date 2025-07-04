@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class HeaderTest extends TestBase {
 
-    HeaderComponent header = new HeaderComponent();
+    final HeaderComponent header = new HeaderComponent();
 
     @DisplayName("Проверка открытия модального окна при нажатии Напишите нам")
     @Test

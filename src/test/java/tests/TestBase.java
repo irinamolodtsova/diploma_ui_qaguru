@@ -19,7 +19,7 @@ import static helpers.JenkinsProperties.*;
 
 public class TestBase {
 
-    static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+    static final WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
     @BeforeAll
     static void beforeAll() {
