@@ -42,11 +42,10 @@ public class TestBase {
     }
 
     @BeforeEach
-    void beforeEach() throws InterruptedException {
+    void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open(Configuration.baseUrl);
-        wait(1);
-        Configuration.timeout = 7000;
+        Configuration.timeout = 9000;
     }
 
     @AfterEach
