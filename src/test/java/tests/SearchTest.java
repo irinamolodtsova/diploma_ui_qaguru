@@ -1,12 +1,14 @@
 package tests;
 
-import components.Search;
+import components.CalendarComponent;
+import components.SearchComponent;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SearchTest extends TestBase {
 
-    Search search = new Search();
+    SearchComponent search = new SearchComponent();
+    CalendarComponent calendar = new CalendarComponent();
 
     @DisplayName("Проверка доступных опций по поиску - Туры, Отели, Экскурсии")
     @Test
@@ -41,5 +43,25 @@ public class SearchTest extends TestBase {
                 .checkDestinationField()
                 .checkDepartureCityFieldDoesNotExist()
                 .checkTouristsNumberDoesNotExist();
+    }
+
+    @DisplayName("Поиск тура не осуществляется без выбора дат")
+    @Test
+    void noSearchTourWithoutDates() {
+        search.chooseCountry()
+                .chooseRandomCity()
+                .searchClick()
+                .smallMapNotExists();
+    }
+
+    @DisplayName("Открытие страницы результата поиска тура")
+    @Test
+    void searchTourPage() {
+        search.chooseCountry();
+        calendar.selectRandomDepartureDate()
+                .selectRandomReturnDate();
+        search.chooseRandomCity()
+                .searchClick()
+                .smallMapExists();
     }
 }

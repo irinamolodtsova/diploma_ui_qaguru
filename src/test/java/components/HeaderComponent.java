@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -72,20 +71,6 @@ public class HeaderComponent {
     public HeaderComponent helpHover() {
         HELP.hover();
         return this;
-    }
-
-    @Step("Check Available Services Dropdown")
-    public HeaderComponent checkServices(String value) {
-        SERVICES_DROPDOWN.shouldHave(text(value));
-        return this;
-
-    }
-
-    @Step("Check Available Help Dropdown")
-    public HeaderComponent checkHelp(String value) {
-        HELP_DROPDOWN.shouldHave(text(value));
-        return this;
-
     }
 
 

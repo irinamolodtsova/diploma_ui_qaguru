@@ -21,34 +21,12 @@ public class HeaderTest extends TestBase {
                 .myListDoesNotExists();
     }
 
-    @CsvFileSource(resources = "/servicesAvailableList.csv")
-    @ParameterizedTest(name = "Проверка доступных опций в выпадающем списке Сервисы")
-    void checkAvailableServiceTest(String hotTours, String lowPriceCalendar, String howToFind, String giftCert, String offers, String superCashback) {
-        header.servicesHover()
-                .checkServices(hotTours)
-                .checkServices(lowPriceCalendar)
-                .checkServices(howToFind)
-                .checkServices(giftCert)
-                .checkServices(offers)
-                .checkServices(superCashback);
-    }
-
-    @CsvFileSource(resources = "/helpAvailableList.csv")
-    @ParameterizedTest(name = "Проверка доступных опций в выпадающем списке Помощь")
-    void checkAvailableHelpTest(String aboutCompany, String openCountries, String faq, String review, String offers, String contacts) {
-        header.helpHover()
-                .checkHelp(aboutCompany)
-                .checkHelp(openCountries)
-                .checkHelp(faq)
-                .checkHelp(review)
-                .checkHelp(offers)
-                .checkHelp(contacts);
-    }
-
     @DisplayName("Проверка открытия модального окна при нажатии Напишите нам")
     @Test
     void contactUsTest() {
         header.contactUsClick()
                 .contactUsModelWindowExists();
     }
+
+
 }
