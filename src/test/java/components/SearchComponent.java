@@ -24,7 +24,7 @@ public class SearchComponent {
     private final SelenideElement DESTINATION_FIELD = $("[data-testid = 'DESTINATION_PICKER_PREVIEW_TEST_ID']");
     private final SelenideElement MAP_WHEN_RESULTS = $("[data-testid = 'map-container']");
     private final SelenideElement CHOOSE_COUNTRY = $("[data-testid = 'DESTINATION_PICKER_PREVIEW_TEST_ID']");
-    private final SelenideElement CHOOSE_CITY_FROM = $("#react-select-4-input");
+    private final SelenideElement CHOOSE_CITY_FROM = $(".lt-departure-picker__value-container");
     private final SelenideElement COUNTRIES_LIST = $(".lt-destination-picker__menu-list");
     private final SelenideElement CITIES_LIST = $(".lt-departure-picker__menu");
     private final ElementsCollection COUNTRY_OPTION = $$(".lt-destination-picker__popularCountries.lt-destination-picker__group");
